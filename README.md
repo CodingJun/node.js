@@ -1,6 +1,4 @@
-# node.js
-node商品爬虫（6万条数据，做商城必备）
-# 开发环境
+﻿# 开发环境
 ```
 node: v8.9.0
 npm: 5.5.1
@@ -33,6 +31,8 @@ axios  发送HTTP请求
 Promise 和 Async 每次存储完毕才继续进行下一页爬取。
 mongoose 存储MongoDB数据
 ```
+
+# 安装依赖 npm npm install --save
 
 # 启动 node app.js
 ```
