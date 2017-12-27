@@ -13,7 +13,6 @@ let connection = mongoose.connection;
 
 const url = 'http://www.mianfei.net/?r=q&p='; //爬虫地址
 let i = 0;   // 从第一页开始
-let complete = 0;
 const loop_time = 20;
 connection.once('open', () => {
     console.log('连接MongoDB成功');
@@ -69,11 +68,11 @@ let spider = () => {
             });
             // 保存到MongoDB
             await saveData(docs, pageIndex);
-            complete++;
-            if (complete === loop_time) {
+            if (i === loop_time) {
                 time = new Date() - startTime;
                 return console.log(time);
             }
+            spider();
         }
     })
     .catch(e => {
@@ -81,7 +80,6 @@ let spider = () => {
         console.log(e);
         spider();
     });
-    spider();
 };
 spider();
 
