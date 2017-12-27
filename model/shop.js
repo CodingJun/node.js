@@ -1,5 +1,5 @@
-var mongoose = require('mongoose')
-var schema = new mongoose.Schema({
+let mongoose = require('mongoose');
+let schema = new mongoose.Schema({
     productId:String,
     productImage: String,        // 图片地址
     productName: String,      // 商品标题
@@ -14,7 +14,8 @@ var schema = new mongoose.Schema({
     time: {             // 时间戳
         type: Number,
         default: Date.now
-    },
-})
+    }
+});
+
 module.exports = mongoose.model('Shops', schema);
 //爬完后 引入这个数据模型即可
